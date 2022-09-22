@@ -1,6 +1,6 @@
 import sys
 input = sys.stdin.readline
 
-a, b = map(int, input().split(' '))
+A, B = map(int, input().split(' '))
 
-print(a+b, a-b, a*b, a//b, a%b, sep='\n')
+print(A+B, A-B, A*B, A//B, A%B, sep='\n')
