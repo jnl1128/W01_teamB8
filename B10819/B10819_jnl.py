@@ -26,6 +26,7 @@ def permutation(lst):
         m = lst[i]
 
         for p in permutation(splice(lst, i)):
+            print(p)
             l.append([m]+p)
 
     return l
