@@ -9,4 +9,5 @@ def hanoi(n, start, end, aux):
 
 n = int(input())
 print(2**n-1)
-hanoi(n,1,3,2)
+if(n <= 20):
+    hanoi(n,1,3,2)
