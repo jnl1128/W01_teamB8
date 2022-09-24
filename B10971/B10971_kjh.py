@@ -12,6 +12,9 @@ def solution(depth, sum, start):
     global min_sum
     global visited
 
+    if sum > min_sum:
+        return
+
     if depth == n-1:
         if w[start][0] != 0:
             min_sum = min(min_sum, sum + w[start][0])
