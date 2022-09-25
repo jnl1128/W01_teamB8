@@ -1,41 +1,19 @@
-import sys
-input = sys.stdin.readline
+# 다른 사람 풀이 참고함
+
+# a, b, c 기둥이 있다고 하자
+# a -> c로 모두 옮기고 싶을 때
+# 기둥에 남은 원반의 개수가 1이면 목적지 기둥으로 보내주면 된다.
+# 1개 이상이면(n개) n-1를 옆기둥으로 보내주면 된다.
 
 N = int(input())
-
-
-def checkDiagonal(row, col,visited):
-
-    for i in range(1, N):
-        if row+(-1*i) >= 0 and  0<=col+(1*i)<N:
-            if visited[row+(-1*i)] == col+(1*i):
-                return False
-        if row+(-1*i) >= 0 and 0<=col+(-1*i)<N :
-            if visited[row+(-1*i)] ==col+(-1*i):
-                return False
-    return True
-
-cnt = 0
-def dfs(visited):
-    global cnt 
-    if len(visited) == N:
-        cnt += 1
-        return 
-
-    for i in range(N):
-        # 갈 수 있는 곳인지 
-        # 대각선 검증 # col 검증 # row 검증은 할 필요 없음
-        if i not in visited and checkDiagonal(len(visited), i, visited):
-            visited.append(i)
-            dfs(visited)
-            visited.pop()
-            
-                
-    
-
-# i : 0번째 row의 i col에 퀸을 둘 것인지
-# 기본적으로 backtracking
-for i in range(N):
-    dfs([i])
-    
-sys.stdout.write('{}'.format(cnt))
+def f(n, a, b, c):
+    # print(n, a, b, c)
+    if n== 1:
+        print(a, c)
+    else:
+        f(n-1, a, c, b)
+        f(1, a, b, c)
+        f(n-1, b, a, c)
+print(2**(N)-1)
+if (N<=20):
+    f(N, 1, 2, 3)
