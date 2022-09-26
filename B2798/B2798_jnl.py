@@ -1,3 +1,4 @@
+#블랙잭 #반복
 import sys
 input = sys.stdin.readline
 
