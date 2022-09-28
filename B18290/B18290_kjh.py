@@ -38,4 +38,4 @@ def solution(depth, result, pre):
 
 
 solution(0, 0, 0)
-sys.stdout.write(f'{max_num}')
+sys.stdout.write(f'{max_num}') 
