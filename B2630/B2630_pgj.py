@@ -3,7 +3,7 @@ import sys
 
 
 def colorpaper(n, x, y):
-    global result, blue, white
+    global blue, white
     if n == 1:
         if(arr[x][y] == 1):
             blue += 1
