@@ -1,8 +1,6 @@
 import sys
 
-n, m = map(int, input().split())
-
-used = [0] * (n+1)
+n, m = map(int, sys.stdin.readline().split())
 
 def solution(depth, pre, result):
     if depth == m:
