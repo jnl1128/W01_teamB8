@@ -3,15 +3,12 @@ import sys
 input = sys.stdin.readline
 N, M = map(int, input().split(' '))
 arr = list(map(int, input().split(' ')))
-
+arr.sort()
 visited = [0 for _ in range(N)]
-result = []
 
 def solution(depth, stack, start):
     if depth == M:
-        stack.sort()
-        if stack not in result:
-            result.append(stack)
+        print(*stack)
         return
 
     for i in range(start, N):
@@ -21,6 +18,3 @@ def solution(depth, stack, start):
             visited[i] = 0
 
 solution(0, [], 0) 
-result.sort()
-for elem in result:
-    print(*elem, sep =' ')
