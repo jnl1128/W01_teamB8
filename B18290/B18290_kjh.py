@@ -13,7 +13,11 @@ def solution(depth, result, pre):
     if depth == k:
         max_num = max(max_num, result)
         return
-        
+
+    # 문제 조건에 따라 각 칸이 가질 수 있는 최대값은 10000 이다.
+    # 따라서 남은 갯수(k-depth) 의 칸이 모두 10000 이라도
+    # max_num 보다 작다면, 이후의 계산은 의미가 없으므로
+    # 탐색을 종료한다.
     if result + 10000 * (k-depth) < max_num:
         return
     
@@ -34,4 +38,4 @@ def solution(depth, result, pre):
 
 
 solution(0, 0, 0)
-sys.stdout.write(f'{max_num}')
+sys.stdout.write(f'{max_num}') 
