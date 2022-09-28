@@ -13,6 +13,9 @@ def solution(depth, result, pre):
     if depth == k:
         max_num = max(max_num, result)
         return
+        
+    if result + 10000 * (k-depth) < max_num:
+        return
     
     for i in range(pre, m * n):
         if visited[i] == 0:
