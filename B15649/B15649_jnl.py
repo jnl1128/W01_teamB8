@@ -1,19 +1,15 @@
 #N과 M(1)
-from audioop import reverse
 import sys
 input = sys.stdin.readline
-# print = sys.stdout.write
 
 N, M = map(int, input().split(' '))
 
 arr = [i for i in range(1, N+1)]
 visited = [0  for _ in range(N+1)]
-result = []
 
 def solution(depth, stack):
     if depth == M:
-        # stack.sort(reverse=True)
-        result.append(stack)
+        print(*stack)
         return
 
     for i in range(1,N+1):
@@ -23,6 +19,3 @@ def solution(depth, stack):
             visited[i] = 0
 
 solution(0, [])
-result.sort()
-for elem in result:
-    print(*elem, sep=' ')
